@@ -18,7 +18,7 @@ app.use(express.static("uploads"));
 
 const start = async() =>{
     const connectDB = await mongoose.connect(process.env.MONGO_URL);
-    app.listen(9080, ()=>{
+    app.listen(5000, ()=>{
         console.log("Server is listening to port");
         
     })
