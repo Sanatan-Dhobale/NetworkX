@@ -16,12 +16,22 @@ app.use(postRoutes);
 app.use(userRoutes);
 app.use(express.static("uploads"));
 
-const start = async() =>{
-    const connectDB = await mongoose.connect(process.env.MONGO_URL);
-    app.listen(5000, ()=>{
-        console.log("Server is listening to port");
-        
-    })
-}
+const PORT = process.env.PORT || 5000;
+
+const start = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+        console.log("✅ MongoDB Connected");
+
+        app.listen(PORT, () => {
+            console.log(`✅ Server listening on port ${PORT}`);
+        });
+
+    } catch (err) {
+        console.error("❌ Startup Error:");
+        console.error(err);
+        process.exit(1);
+    }
+};
 
 start();
