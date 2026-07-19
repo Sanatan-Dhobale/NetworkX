@@ -1,0 +1,279 @@
+.container{
+
+    width:100%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:#FFFFFF;
+
+    border-bottom:1px solid #E2E8F0;
+
+    box-shadow:0 2px 10px rgba(15,23,42,.05);
+}
+
+.navBar{
+
+    width:100%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 24px;
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:#2563EB;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.25s;
+}
+
+.logo:hover{
+
+    color:#1D4ED8;
+}
+
+.navBarOptionContainer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+.navLinks{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+}
+
+.navItem{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#1E293B;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.navItem:hover{
+
+    color:#2563EB;
+}
+
+.navItem::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#2563EB;
+
+    transition:.25s;
+}
+
+.navItem:hover::after{
+
+    width:100%;
+}
+
+.buttonJoin{
+
+    background:#2563EB;
+
+    color:white;
+
+    padding:11px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(37,99,235,.2);
+}
+
+.buttonJoin:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+}
+
+.buttonJoin:active{
+
+    transform:scale(.96);
+}
+
+.logout{
+
+    color:#EF4444;
+}
+
+.logout:hover{
+
+    color:#DC2626;
+}
+
+.mobileMenu{
+
+    display:none;
+}
+
+
+/* ===========================
+        Tablet
+=========================== */
+
+@media(max-width:992px){
+
+.navBar{
+
+    padding:0 18px;
+}
+
+.logo{
+
+    font-size:24px;
+}
+
+.navLinks{
+
+    gap:18px;
+}
+
+.navItem{
+
+    font-size:15px;
+}
+
+.buttonJoin{
+
+    padding:10px 20px;
+}
+
+}
+
+
+/* ===========================
+        Mobile
+=========================== */
+
+@media(max-width:768px){
+
+.navBar{
+
+    height:64px;
+
+    padding:0 16px;
+}
+
+.logo{
+
+    font-size:22px;
+}
+
+.navLinks{
+
+    gap:14px;
+}
+
+.navItem{
+
+    font-size:14px;
+}
+
+.buttonJoin{
+
+    padding:9px 16px;
+
+    font-size:14px;
+}
+
+}
+
+
+/* ===========================
+      Small Mobile
+=========================== */
+
+@media(max-width:480px){
+
+.navBar{
+
+    height:60px;
+
+    padding:0 14px;
+}
+
+.logo{
+
+    font-size:20px;
+}
+
+.navLinks{
+
+    gap:10px;
+}
+
+.navItem{
+
+    font-size:13px;
+}
+
+.buttonJoin{
+
+    padding:8px 14px;
+
+    font-size:13px;
+}
+
+}

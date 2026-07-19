@@ -1,0 +1,257 @@
+.discoverContainer{
+
+    width:100%;
+
+    padding:10px 0 40px;
+}
+
+.discoverHeader{
+
+    margin-bottom:30px;
+}
+
+.discoverHeader h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+    margin-bottom:8px;
+}
+
+.discoverHeader p{
+
+    color:#64748B;
+
+    font-size:16px;
+}
+
+.allUserProfile{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+
+    gap:24px;
+}
+
+.userCard{
+
+    background:#FFFFFF;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 3px 12px rgba(15,23,42,.05);
+}
+
+.userCard:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 14px 32px rgba(37,99,235,.15);
+}
+
+.userCard_image{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #2563EB;
+
+    flex-shrink:0;
+}
+
+.userCard h2{
+
+    font-size:20px;
+
+    color:#1E293B;
+
+    margin-bottom:6px;
+
+    font-weight:700;
+}
+
+.userCard p{
+
+    color:#64748B;
+
+    font-size:15px;
+}
+
+.userCard div{
+
+    flex:1;
+}
+
+.userCard::after{
+
+    content:"View Profile";
+
+    margin-left:auto;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    opacity:0;
+
+    transition:.25s;
+}
+
+.userCard:hover::after{
+
+    opacity:1;
+}
+
+
+@media(max-width:992px){
+
+.allUserProfile{
+
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.userCard{
+
+    padding:20px;
+}
+
+.userCard_image{
+
+    width:65px;
+
+    height:65px;
+}
+
+.userCard h2{
+
+    font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+.discoverHeader{
+
+    margin-bottom:22px;
+}
+
+.discoverHeader h1{
+
+    font-size:28px;
+}
+
+.discoverHeader p{
+
+    font-size:15px;
+}
+
+.allUserProfile{
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+}
+
+.userCard{
+
+    padding:18px;
+}
+
+.userCard_image{
+
+    width:60px;
+
+    height:60px;
+}
+
+.userCard h2{
+
+    font-size:17px;
+}
+
+.userCard p{
+
+    font-size:14px;
+}
+
+}
+
+@media(max-width:480px){
+
+.discoverContainer{
+
+    padding-bottom:90px;
+}
+
+.discoverHeader h1{
+
+    font-size:24px;
+}
+
+.discoverHeader p{
+
+    font-size:14px;
+}
+
+.userCard{
+
+    padding:16px;
+
+    gap:14px;
+
+    border-radius:14px;
+}
+
+.userCard_image{
+
+    width:55px;
+
+    height:55px;
+}
+
+.userCard h2{
+
+    font-size:16px;
+}
+
+.userCard p{
+
+    font-size:13px;
+}
+
+.userCard::after{
+
+    display:none;
+}
+
+}

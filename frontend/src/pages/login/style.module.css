@@ -1,0 +1,304 @@
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 60%, #FFFFFF 100%);
+}
+
+.cardContainer {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 620px;
+
+  display: flex;
+
+  background: var(--color-surface);
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.cardContainer_left {
+  flex: 1.2;
+
+  background: white;
+
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardleft_heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.cardContainer_left>p:nth-child(2) {
+  min-height: 22px;
+  font-size: .95rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 18px;
+}
+
+.inputRow .inputField {
+  flex: 1;
+}
+
+.inputField {
+  width: 100%;
+  padding: 16px 20px;
+
+  border: 1.5px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  font-size: 15px;
+
+  color: var(--color-text-primary);
+
+  transition: .25s;
+
+  background: white;
+}
+
+.inputField::placeholder {
+  color: #94A3B8;
+}
+
+.inputField:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, .10);
+}
+
+.buttonWithOutline {
+  margin-top: 10px;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 15px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+  user-select: none;
+
+  font-weight: 700;
+}
+
+.cardContainer_left .buttonWithOutline {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.cardContainer_left .buttonWithOutline:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.buttonWithOutline p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cardContainer_right {
+  flex: .85;
+
+  background: linear-gradient(135deg,
+      var(--color-primary),
+      var(--color-secondary));
+
+  color: white;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px;
+}
+
+.cardContainer_right p:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+
+.cardContainer_right .buttonWithOutline {
+  width: 200px;
+
+  background: white;
+
+  color: var(--color-primary);
+
+  border: 2px solid white;
+}
+
+.cardContainer_right .buttonWithOutline:hover {
+  transform: translateY(-3px);
+  background: #F8FAFC;
+}
+
+@media (max-width:1100px) {
+
+  .cardContainer {
+    max-width: 900px;
+  }
+
+  .cardContainer_left {
+    padding: 50px;
+  }
+
+  .cardContainer_right {
+    padding: 40px;
+  }
+
+}
+
+@media (max-width:900px) {
+
+  .container {
+    padding: 30px 18px;
+  }
+
+  .cardContainer {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .cardContainer_right {
+    order: -1;
+    padding: 45px 30px;
+  }
+
+  .cardContainer_left {
+    padding: 45px 30px;
+  }
+
+  .cardContainer_right p:first-child {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .cardleft_heading {
+    font-size: 2.1rem;
+  }
+
+  .inputRow {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .cardContainer_left {
+    padding: 35px 25px;
+  }
+
+  .cardContainer_right {
+    padding: 35px 25px;
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .container {
+    padding: 15px;
+  }
+
+  .cardContainer {
+    border-radius: 16px;
+  }
+
+  .cardContainer_left {
+    padding: 28px 18px;
+  }
+
+  .cardContainer_right {
+    padding: 30px 20px;
+  }
+
+  .cardleft_heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .cardContainer_left>p:nth-child(2) {
+    text-align: center;
+    font-size: .9rem;
+  }
+
+  .inputField {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .buttonWithOutline {
+    padding: 14px;
+  }
+
+  .cardContainer_right p:first-child {
+    font-size: 1.5rem;
+  }
+
+  .cardContainer_right .buttonWithOutline {
+    width: 100%;
+    max-width: 220px;
+  }
+
+}
+
+@media (max-width:360px) {
+
+  .cardleft_heading {
+    font-size: 1.6rem;
+  }
+
+  .cardContainer_right p:first-child {
+    font-size: 1.3rem;
+  }
+
+}

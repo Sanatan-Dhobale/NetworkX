@@ -1,0 +1,560 @@
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--color-bg);
+  box-sizing: border-box;
+}
+
+.container * {
+  box-sizing: border-box;
+}
+
+
+.coverSection {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.coverBanner {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-lg);
+  background: url("https://img.magnific.com/free-vector/realistic-technology-background_52683-73672.jpg?semt=ais_hybrid&w=740&q=80");
+}
+
+.avatarWrapper {
+  position: absolute;
+  left: 2rem;
+  bottom: -56px;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--color-surface);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-surface);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.editOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(30, 41, 59, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.avatarWrapper:hover .editOverlay {
+  opacity: 1;
+}
+
+.editOverlay label {
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 999px;
+}
+
+.headerActions {
+  position: absolute;
+  right: 0.5rem;
+  bottom: -46px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.connectionButton {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.connectionButton:hover {
+  background-color: #0DA271;
+  transform: translateY(-1px);
+}
+
+.profileMeta {
+  margin-top: 68px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nameEdit {
+  border: none;
+  background: transparent;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  outline: none;
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.4rem;
+  transition: background-color 0.15s ease;
+  max-width: 260px;
+}
+
+.nameEdit:hover,
+.nameEdit:focus {
+  background-color: var(--color-bg);
+}
+
+.username {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bioInput {
+  margin-top: 0.75rem;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bioInput:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: var(--color-surface);
+}
+
+.statsRow {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statItem strong {
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+}
+
+.statItem span {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sectionHeader h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+}
+
+.sideHeading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.workHistoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workHistorycard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.workHistorycard:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.workHistorycard p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+}
+
+.workHistorycard p:last-child {
+  color: black;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.addWorkButton {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.addWorkButton:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.postCard {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.625rem 0.75rem;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.card_profileContainer img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.card p {
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modalCard {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 420px;
+  padding: 1.5rem;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalTitle {
+  margin: 0 0 1.125rem;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.inputField {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: var(--color-surface);
+}
+
+.inputField::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.addWorkBtn {
+  margin-top: 0.375rem;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addWorkBtn:hover {
+  background-color: #1D4ED8;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem 2.5rem;
+  }
+
+  .coverBanner {
+    height: 150px;
+  }
+
+  .avatarWrapper {
+    left: 1.5rem;
+    width: 104px;
+    height: 104px;
+    bottom: -48px;
+  }
+
+  .headerActions {
+    right: 0.5rem;
+    bottom: -40px;
+  }
+
+  .profileMeta {
+    margin-top: 60px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coverSection {
+    margin-top: 1rem;
+  }
+
+  .coverBanner {
+    height: 120px;
+    border-radius: var(--radius-md);
+  }
+
+  .avatarWrapper {
+    left: 1rem;
+    width: 84px;
+    height: 84px;
+    bottom: -38px;
+    border-width: 3px;
+  }
+
+  .headerActions {
+    position: static;
+    margin-top: 0.75rem;
+  }
+
+  .connectionButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profileMeta {
+    margin-top: 48px;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .nameEdit {
+    font-size: 1.1rem;
+    max-width: 160px;
+  }
+
+  .statsRow {
+    gap: 1.25rem;
+  }
+
+  .sectionCard {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .sectionHeader {
+    flex-wrap: wrap;
+  }
+
+  .addWorkButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .workHistorycard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .workHistorycard p:last-child {
+    white-space: normal;
+  }
+
+  .modalCard {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .modalOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modalCard {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: slideUpMobile 0.25s ease;
+  }
+
+  @keyframes slideUpMobile {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .avatarWrapper {
+    width: 72px;
+    height: 72px;
+    bottom: -32px;
+  }
+
+  .profileMeta {
+    margin-top: 42px;
+  }
+}

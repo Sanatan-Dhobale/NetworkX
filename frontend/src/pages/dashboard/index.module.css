@@ -1,0 +1,491 @@
+.scrollComponent {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.scrollComponent * {
+  box-sizing: border-box;
+}
+
+
+.createPostContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.createPostContainer:focus-within {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.createPostContainer .userProfile {
+  width: 44px !important;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.textArea {
+  flex: 1;
+  min-height: 44px;
+  max-height: 160px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  padding: 0.5rem 0.25rem;
+}
+
+.textArea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.Fab {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 3.5rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.Fab:hover {
+  background-color: #EFF6FF;
+  transform: scale(1.05);
+}
+
+.Fab svg {
+  width: 20px;
+  height: 20px;
+}
+
+.uploadButton {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.uploadButton:hover {
+  background-color: #1D4ED8;
+  transform: scale(1.05);
+}
+
+.uploadButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.singleCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.singleCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.singleCard_profileContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.singleCard_profileContainer .userProfile {
+  width: 44px !important;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.singleCard_profileContainer p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.singleCard_profileContainer svg {
+  width: 20px;
+  cursor: pointer;
+  color: black;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.singleCard_profileContainer svg:hover {
+  transform: scale(1.1);
+}
+
+.singleCard_image {
+  margin-top: 0.875rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleCard_image img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.optionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.singleOption_optionContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.375rem 0.625rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+.singleOption_optionContainer:hover {
+  background-color: #EFF6FF;
+  color: var(--color-primary);
+}
+
+.singleOption_optionContainer svg {
+  width: 20px;
+  height: 20px;
+}
+
+.singleOption_optionContainer p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.commentsContainer {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.allCommentsContainer {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.allCommentsContainer h2 {
+  margin: 0;
+  padding: 1.125rem 1.25rem 0.75rem;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.875rem;
+}
+
+.commentsList {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.5rem 1.25rem;
+}
+
+.singleComment {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.singleComment:last-child {
+  border-bottom: none;
+}
+
+.singleComment_profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.375rem;
+}
+
+.singleComment_profileContainer img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+}
+
+.singleComment_profileContainer p {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.singleComment_profileContainer p:nth-child(2) {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.singleComment > p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-left: 2.75rem;
+}
+
+.postCommentContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.postCommentContainer input {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postCommentContainer input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: var(--color-surface);
+}
+
+.postCommentContainer input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.postCommentContainer_commentbtn {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.625rem 1.125rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.postCommentContainer_commentbtn:hover {
+  background-color: #1D4ED8;
+  transform: translateY(-1px);
+}
+
+.postCommentContainer_commentbtn p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .scrollComponent {
+    padding: 1rem 0.75rem 2.5rem;
+    gap: 1rem;
+  }
+
+  .createPostContainer,
+  .singleCard {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .singleCard_image {
+    max-height: 340px;
+  }
+
+  .singleCard_image img {
+    max-height: 340px;
+  }
+
+  .optionsContainer {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollComponent {
+    padding: 0.75rem 0.5rem 2rem;
+  }
+
+  .createPostContainer,
+  .singleCard {
+    padding: 0.875rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .createPostContainer .userProfile,
+  .singleCard_profileContainer .userProfile {
+    width: 38px !important;
+    height: 38px;
+  }
+
+  .textArea {
+    font-size: 0.9rem;
+  }
+
+  .Fab,
+  .uploadButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .Fab {
+    right: 3rem;
+  }
+
+  .singleCard_image {
+    max-height: 260px;
+  }
+
+  .singleCard_image img {
+    max-height: 260px;
+  }
+
+  .optionsContainer {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .singleOption_optionContainer {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .singleOption_optionContainer p {
+    font-size: 0.8rem;
+  }
+
+  .allCommentsContainer {
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+  }
+
+  .commentsContainer {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .allCommentsContainer {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: slideUpMobile 0.25s ease;
+  }
+
+  @keyframes slideUpMobile {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .postCommentContainer {
+    padding: 0.75rem 1rem;
+  }
+
+  .singleComment > p {
+    padding-left: 0;
+    margin-top: 0.375rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .optionsContainer {
+    gap: 0.375rem;
+  }
+
+  .singleOption_optionContainer svg {
+    width: 18px;
+    height: 18px;
+  }
+}
