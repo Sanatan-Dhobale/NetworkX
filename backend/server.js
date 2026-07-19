@@ -34,4 +34,7 @@ const start = async () => {
     }
 };
 
+console.log("MONGO_URL exists:", !!process.env.MONGO_URL);
+console.log("PORT:", process.env.PORT);
+
 start();
