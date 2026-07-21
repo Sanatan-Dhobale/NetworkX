@@ -40,7 +40,7 @@ function DiscoverPage() {
                     <div onClick={() => {
                       router.push(`/view_profile/${user.userId.username}`)
                     }} key={user._id} className={styles.userCard}>
-                      <img className={styles.userCard_image} src={`${BASE_URL}/${user.userId.profilePicture}`} alt="" />
+                      <img className={styles.userCard_image} src={user.userId.profilePicture} alt="" />
                       <div>
                         <h2>{user.userId.name}</h2>
                         <p>@{user.userId.username}</p>

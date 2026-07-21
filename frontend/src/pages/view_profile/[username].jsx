@@ -83,7 +83,7 @@ function ViewProfilePage({ userProfile }) {
             <div className={styles.avatarWrapper}>
               <img
                 className={styles.profileImage}
-                src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
+                src={userProfile.userId.profilePicture}
                 alt=""
               />
             </div>
@@ -209,7 +209,7 @@ function ViewProfilePage({ userProfile }) {
 
                           <img
                             className={styles.postAvatar}
-                            src={`${BASE_URL}/${post.userId.profilePicture}`}
+                            src={post.userId.profilePicture}
                             alt=""
                           />
 
@@ -238,7 +238,7 @@ function ViewProfilePage({ userProfile }) {
                         post.media &&
                         <img
                           className={styles.postImage}
-                          src={`${BASE_URL}/${post.media}`}
+                          src={post.media}
                           alt=""
                         />
                       }

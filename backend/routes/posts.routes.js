@@ -2,21 +2,22 @@ import { Router } from "express";
 import { activeCheck } from "../controllers/posts.controller.js";
 import multer from "multer";
 import { createPost, getAllPost, deletePost, commentPost, get_comment_by_post, delete_comment_of_user, increment_likes} from "../controllers/posts.controller.js";
-
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import cloudinary from "../config/cloudinary.js";
 
 const router = Router();
 
-const storage = multer.diskStorage({
-
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname)
-    },
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: "networkx",
+        allowed_formats: ["jpg", "jpeg", "png", "webp", "gif"]
+    }
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage
+});
 
 router.route('/').get(activeCheck);
 

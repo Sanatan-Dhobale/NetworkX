@@ -109,7 +109,7 @@ function ProfilePage() {
                             <div className={styles.avatarWrapper}>
                                 <img
                                     className={styles.profileImage}
-                                    src={`${BASE_URL}/${userProfile.userId.profilePicture}`}
+                                    src={userProfile.userId.profilePicture}
                                     alt=""
                                 />
 

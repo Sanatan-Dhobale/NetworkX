@@ -53,7 +53,7 @@ function MyConnectionsPage() {
                                     }} className={styles.userCard} key={index}>
                                         <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"2em"}}>
                                             <div className={styles.profilePicture}>
-                                                <img src={`${BASE_URL}/${user.userId.profilePicture}`} alt="" />
+                                                <img src={user.userId.profilePicture} alt="" />
                                             </div>
 
                                             <div className={styles.userInfo}>
@@ -92,7 +92,7 @@ function MyConnectionsPage() {
                                     }} className={styles.userCard} key={index}>
                                         <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"2em"}}>
                                             <div className={styles.profilePicture}>
-                                                <img src={`${BASE_URL}/${user.userId.profilePicture}`} alt="" />
+                                                <img src={user.userId.profilePicture} alt="" />
                                             </div>
 
                                             <div className={styles.userInfo}>

@@ -51,7 +51,7 @@ function Dashboard() {
 
             {authState.user?.userId?.profilePicture
               ? <img className={styles.userProfile} width={100}
-                src={`${BASE_URL}/${authState.user.userId.profilePicture}`}
+                src={authState.user.userId.profilePicture}
                 alt=""
               />
               : "Loading"}
@@ -89,7 +89,7 @@ function Dashboard() {
 
                       {authState.user?.userId?.profilePicture
                         ? <img className={styles.userProfile} width={100}
-                          src={`${BASE_URL}/${post.userId.profilePicture}`}
+                          src={post.userId.profilePicture}
                           alt=""
                         />
                         : "Loading"}
@@ -115,7 +115,7 @@ function Dashboard() {
                         <p style={{ paddingTop: "1.3rem" }}>{post.body}</p>
 
                         <div className={styles.singleCard_image}>
-                          <img src={`${BASE_URL}/${post.media}`} alt="" />
+                          <img src={post.media} alt="" />
                         </div>
 
                         <div className={styles.optionsContainer}>
@@ -186,7 +186,7 @@ function Dashboard() {
                       return (
                         <div className={styles.singleComment} key={postComment._id}>
                           <div className={styles.singleComment_profileContainer}>
-                            <img src={`${BASE_URL}/${postComment.userId.profilePicture}`} alt="" />
+                            <img src={postComment.userId.profilePicture} alt="" />
                             <div>
                              <p style={{fontWeight: "bold", fontSize: "1.2rem"}}>
                             {postComment.userId.name}

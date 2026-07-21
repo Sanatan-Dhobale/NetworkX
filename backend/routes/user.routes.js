@@ -1,19 +1,22 @@
 import { Router } from "express";
 import { register, login, uploadProfilePicture, updateUserProfile, getUserAndProfile, updateProfileData, getAllUserProfile, donwloadProfile, sendConnectionRequest, getMyConnectionsRequests, whatAreMyConnections, acceptConnectionRequest, getUserProfileAndUserBasedOnUsername } from "../controllers/user.controller.js";
 import multer from "multer";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import cloudinary from "../config/cloudinary.js";
 
 const router = Router();
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname)
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: "networkx",
+        allowed_formats: ["jpg", "jpeg", "png", "webp", "gif"]
     }
-})
+});
 
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage
+});
 
 router.route("/upload_profile_picture").post(upload.single("profile_picture"), uploadProfilePicture);
 
