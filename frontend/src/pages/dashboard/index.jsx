@@ -39,7 +39,6 @@ function Dashboard() {
     dispatch(getAllPosts())
   }
 
-
   return (
     <UserLayout>
 
