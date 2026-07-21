@@ -10,8 +10,6 @@ import axios from "axios";
 
 const convertUserDataToPDF = async (userData) => {
 
-    console.log(userData.userId.profilePicture);
-
     const outputPath = crypto.randomBytes(32).toString("hex") + ".pdf";
 
     const doc = new PDFDocument({
@@ -37,7 +35,7 @@ const convertUserDataToPDF = async (userData) => {
     });
 
     const imagePath = Buffer.from(response.data);
-   
+
 
     const imageX = 100;
     const imageY = 100;
@@ -174,8 +172,6 @@ const convertUserDataToPDF = async (userData) => {
 
     doc.end();
 
-
-    return outputPath;
 }
 
 
