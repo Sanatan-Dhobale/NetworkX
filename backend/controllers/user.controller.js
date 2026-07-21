@@ -6,9 +6,11 @@ import fs from "fs";
 import PDFDocument from "pdfkit";
 import ConnectionRequest from "../models/connections.model.js";
 import Post from "../models/posts.model.js";
+import axios from "axios";
 
-const convertUserDataToPDF = (userData) => {
+const convertUserDataToPDF = async (userData) => {
 
+    console.log(userData.userId.profilePicture);
 
     const outputPath = crypto.randomBytes(32).toString("hex") + ".pdf";
 
@@ -30,7 +32,12 @@ const convertUserDataToPDF = (userData) => {
 
     doc.moveDown();
 
-    const imagePath = `uploads/${userData.userId.profilePicture}`;
+    const response = await axios.get(userData.userId.profilePicture, {
+        responseType: "arraybuffer"
+    });
+
+    const imagePath = Buffer.from(response.data);
+   
 
     const imageX = 100;
     const imageY = 100;
@@ -42,15 +49,15 @@ const convertUserDataToPDF = (userData) => {
 
     const textX = imageX + 110;
 
-doc
-    .fillColor("black")
-    .fontSize(24)
-    .text(userData.userId.name, textX, imageY + 15);
+    doc
+        .fillColor("black")
+        .fontSize(24)
+        .text(userData.userId.name, textX, imageY + 15);
 
-doc
-    .fillColor("#64748B")
-    .fontSize(15)
-    .text(`@${userData.userId.username}`, textX, imageY + 45);
+    doc
+        .fillColor("#64748B")
+        .fontSize(15)
+        .text(`@${userData.userId.username}`, textX, imageY + 45);
 
     doc.moveDown();
 
