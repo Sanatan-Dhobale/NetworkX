@@ -172,6 +172,8 @@ const convertUserDataToPDF = async (userData) => {
 
     doc.end();
 
+    return outputPath;
+
 }
 
 

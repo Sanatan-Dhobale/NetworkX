@@ -4,7 +4,6 @@ import UserLayout from '@/layout/UserLayout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMyConnectionRequests, acceptConnection } from "@/config/redux/action/authAction";
 import styles from "./index.module.css";
-import { BASE_URL } from '@/config';
 import { useRouter } from 'next/router';
 
 function MyConnectionsPage() {

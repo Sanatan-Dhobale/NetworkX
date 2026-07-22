@@ -1,6 +1,6 @@
 
 
-import { BASE_URL, clientServer } from '@/config';
+import { NEXT_PUBLIC_BASE_URL, clientServer } from '@/config';
 import DashboardLayout from '@/layout/DashboardLayout';
 import UserLayout from '@/layout/UserLayout';
 import { useSearchParams } from 'next/navigation'

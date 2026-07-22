@@ -3,7 +3,6 @@ import UserLayout from '@/layout/UserLayout';
 import DashboardLayout from '@/layout/DashboardLayout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllUsers } from "@/config/redux/action/authAction"
-import { BASE_URL } from '@/config';
 import styles from "./index.module.css";
 import { useRouter } from 'next/router';
 

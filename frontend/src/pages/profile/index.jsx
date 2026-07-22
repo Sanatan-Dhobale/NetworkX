@@ -2,7 +2,7 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import UserLayout from '@/layout/UserLayout'
 import React, { useEffect, useState } from 'react'
 import styles from "./index.module.css"
-import { BASE_URL, clientServer } from '@/config';
+import { clientServer } from '@/config';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAboutUser } from '@/config/redux/action/authAction';
 import { getAllPosts } from '@/config/redux/action/postAction';
